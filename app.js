@@ -1,14 +1,15 @@
 // Setup – similar to default tags in HTML
-const express = require("express");
+const express = require("express")
 // We have to use cors in order to host front end and backend on the same site
-var cors = require("cors");
+var cors = require("cors")
 
-// Activate Express app
-const app = express();
-app.use(cors());
-const router = express.Router();
+// Activate or tell this app variable to be an express server
+const app = express()
+app.use(cors())
+const router = express.Router()
 
-// Define a route to get songs
+// making an api using routes
+// routes are used to handle browser requests. They look like urls.
 router.get("/songs", function (req, res) {
     const songs = [
         {
@@ -25,14 +26,10 @@ router.get("/songs", function (req, res) {
             releaseDate: new Date(2013, 11, 21),
             genre: ["soul", "new soul"]
         }
-    ];
-    res.json(songs);
-});
+    ]
+    res.json(songs)
+})
 
-// Mount API routes under /api
-app.use("/api", router);
-
-// Start server
-app.listen(3000, () => {
-    console.log("Server listening on http://localhost:3000");
-});
+// All requests that usually use api start with /api... so the url would be localhost:3000/api/songs
+app.use("/api", router)
+app.listen(3000)
