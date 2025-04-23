@@ -4,7 +4,8 @@
   "description": "backend song applications",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
   },
   "homepage": "https://github.com/lhernandez66/full-stack-node-backend#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "nodemon": "^3.1.9"
+    "express": "^4.18.2",
+    "mongoose": "^8.13.2",
+    "nodemon": "^2.0.7"
   }
 }
